@@ -8,28 +8,31 @@ let task_container =document.getElementById('task_container');
 
 
 todocard=(del)=>{ 
-        // console.log(del)
+        //for event bubbling call
 
 }
 
 delcall=(del)=>{
-    // console.log(del);
+    //for event bubbling call
     
 }
+//for deleting elements
 svgdel=(del)=>{
     
     if(del.target.nodeName=='svg'){
         let dotoitem = del.target.parentElement.parentElement;
         dotoitem.remove();
+        todo.splice(del,1);//delete element from todo array
         
         console.log("deleted");
        }
    
 }
 cont=(x)=>{
-
+     //for event bubbling call
 }
 
+//checking for task completed
 function taskdone(taskEdit,index){
   
     if(index >=0 && index < todo.length){
@@ -47,7 +50,7 @@ function changebg(taskEdit,index){
             taskEdit.classList.remove('taskDone');
         }
 }
-
+//for creating element 
 function renderTodo(){
     
     task_container.innerHTML='';
@@ -117,7 +120,7 @@ function renderTodo(){
     })
     
 }
-
+//add button call
 function add(){
     
     let temptodo = {
